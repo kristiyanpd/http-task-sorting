@@ -1,0 +1,30 @@
+{
+  "tasks": [
+    {
+      "name": "task-1",
+      "command": "touch ./file1"
+    },
+    {
+      "name": "task-2",
+      "command": "cat ./file1",
+      "requires": [
+        "task-3"
+      ]
+    },
+    {
+      "name": "task-3",
+      "command": "echo 'Hello World!' > ./file1",
+      "requires": [
+        "task-1"
+      ]
+    },
+    {
+      "name": "task-4",
+      "command": "rm ./file1",
+      "requires": [
+        "task-2",
+        "task-3"
+      ]
+    }
+  ]
+}
